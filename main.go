@@ -12,5 +12,7 @@ func main() {
 	http.HandleFunc("/start", tickHandler.startTicker)
 	http.HandleFunc("/tick", tickHandler.tick)
 	http.HandleFunc("/kill", tickHandler.stopTicker)
+	http.HandleFunc("/fetchRecent", localRecentTimeHandler)
+	http.HandleFunc("/fetchAll", localAllTimeHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

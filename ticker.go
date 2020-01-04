@@ -29,6 +29,14 @@ func (tHandler *TickHandler) stopTicker(w http.ResponseWriter, req *http.Request
 	tHandler.siskil <- 1
 }
 
+func localRecentTimeHandler(_ http.ResponseWriter, req *http.Request) {
+	fetchRecentTime()
+}
+
+func localAllTimeHandler(_ http.ResponseWriter, req *http.Request) {
+	fetchAllTime()
+}
+
 func tick(tHandler *TickHandler) {
 	for {
 		select {

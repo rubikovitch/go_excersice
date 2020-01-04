@@ -18,7 +18,8 @@ func listenAndHandle(sigStart chan int) {
 				if !ok {
 					break
 				}
-				fetchTime()
+				time := fetchTime()
+				saveTimeToDB(time)
 			}
 		}
 	}()
